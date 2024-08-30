@@ -1,0 +1,412 @@
+[
+    {
+        "id": "776270fcc9482a69",
+        "type": "tab",
+        "label": "Excel Test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5bd8cd61d428cceb",
+        "type": "tab",
+        "label": "mySQL",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cc3ccd7f6e824c21",
+        "type": "global-config",
+        "name": "global-config",
+        "env": []
+    },
+    {
+        "id": "f34930ee67256551",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2f778b613d152b22",
+        "type": "ui_group",
+        "name": "Table",
+        "tab": "ca5db839c1399808",
+        "order": 2,
+        "disp": true,
+        "width": "13",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "ca5db839c1399808",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f91261a3058b243c",
+        "type": "MySQLdatabase",
+        "name": "counters",
+        "host": "localhost",
+        "port": "3306",
+        "db": "plcdata",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "029955620d45e2f9",
+        "type": "inject",
+        "z": "776270fcc9482a69",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "986e4e47ead06a0e"
+            ]
+        ]
+    },
+    {
+        "id": "986e4e47ead06a0e",
+        "type": "file in",
+        "z": "776270fcc9482a69",
+        "name": "",
+        "filename": "E:\\test.xlsx",
+        "filenameType": "str",
+        "format": "stream",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "fe1c99a92c183d45",
+                "42407bfaefe9c8bf"
+            ]
+        ]
+    },
+    {
+        "id": "fe1c99a92c183d45",
+        "type": "ui_table",
+        "z": "776270fcc9482a69",
+        "group": "2f778b613d152b22",
+        "name": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "columns": [
+            {
+                "field": "Tag",
+                "title": "Tag",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 510,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "42407bfaefe9c8bf",
+        "type": "debug",
+        "z": "776270fcc9482a69",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "04c0975be200c642",
+        "type": "mysql",
+        "z": "5bd8cd61d428cceb",
+        "mydb": "f91261a3058b243c",
+        "name": "CountersDB",
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "bf4d4137a08f82c0"
+            ]
+        ]
+    },
+    {
+        "id": "04899e9561a01323",
+        "type": "function",
+        "z": "5bd8cd61d428cceb",
+        "name": "function 1",
+        "func": "msg.topic = \"select * from plcdata.counters;\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "04c0975be200c642"
+            ]
+        ]
+    },
+    {
+        "id": "dfb546def90bd7ac",
+        "type": "inject",
+        "z": "5bd8cd61d428cceb",
+        "name": "FC10401",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "FC10401",
+        "payload": "15.5",
+        "payloadType": "num",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "04899e9561a01323",
+                "c8f6c078ae4a2b61"
+            ]
+        ]
+    },
+    {
+        "id": "0e582c9a519e771a",
+        "type": "inject",
+        "z": "5bd8cd61d428cceb",
+        "name": "FC10701",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "FC10701",
+        "payload": "18.35",
+        "payloadType": "num",
+        "x": 180,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf4d4137a08f82c0",
+        "type": "debug",
+        "z": "5bd8cd61d428cceb",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c8f6c078ae4a2b61",
+        "type": "function",
+        "z": "5bd8cd61d428cceb",
+        "name": "update FC10401",
+        "func": "msg.topic = \"update plcdata.counters set TagValue=123456 where TagName='FC10401';\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "920cd21b017ba4db"
+            ]
+        ]
+    },
+    {
+        "id": "920cd21b017ba4db",
+        "type": "mysql",
+        "z": "5bd8cd61d428cceb",
+        "mydb": "f91261a3058b243c",
+        "name": "CountersDB",
+        "x": 650,
+        "y": 460,
+        "wires": [
+            [
+                "959f0a60c3e2eccd"
+            ]
+        ]
+    },
+    {
+        "id": "959f0a60c3e2eccd",
+        "type": "debug",
+        "z": "5bd8cd61d428cceb",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 460,
+        "wires": []
+    }
+]
